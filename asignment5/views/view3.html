@@ -1,0 +1,40 @@
+<div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-3" id="s1" >
+        <label for="filter-season" style="color:white;"> Select season 1 team</label>
+         <select class="form-control" id="team1Names" ng-model="check">
+            <option value="" >Season 1 Teams</option>
+            <option ng-repeat="items in mainCtrl.uniqueTeams" value="{{items}}">{{items}}</option>
+         </select>
+      </div>
+    
+     <div id="stats" class="col-xs-6 col-sm-3 col-md-3" >
+       <h3 class="text-center">Season 1 Team's Details</h3>
+          <div class="row text-center" style="margin-top:30px;">
+            <p>Total matches won: {{mainCtrl.won}}</p>
+            <p>Total matches lost: {{mainCtrl.lost}}</p>
+            <p>Tie matches: {{mainCtrl.tie}}</p>
+            <p>total matches played: {{mainCtrl.totalMatches}}</p>
+          </div>
+     </div>
+
+
+    
+      <div class="col-xs-6 col-sm-3 col-md-3" id="s2">
+       <label for="filter-season" style="color:white;"> Select season 2 team</label>
+           <select class="form-control" id="team2Names" ng-model="check2">
+              <option value="" >Season 2 Teams</option>
+              <option ng-repeat="item in mainCtrl.uniqueTeams2" value="{{item}}">{{item}}</option>
+           </select>
+      </div> 
+    
+
+      <div id="stats" class="col-xs-6 col-sm-3 col-md-3"> 
+        <h3 class="text-center">Season 2 Team's Details</h3>
+          <div class="row text-center" style="margin-top:30px;">
+            <p>Total matches won: {{mainCtrl.won2}}</p>
+            <p>Total matches lost: {{mainCtrl.lost2}}</p>
+            <p>Tie matches: {{mainCtrl.tie2}}</p>
+            <p>total matches played:x{{mainCtrl.totalMatches2}}</p>
+          </div>
+      </div>
+</div>

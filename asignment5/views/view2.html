@@ -1,0 +1,71 @@
+<div class="row">
+
+  <div class="col-xs-6 col-sm-3 col-md-3">
+    <label for="filter-season" style="color:white;"> Select Season </label>
+    <select class="form-control" id="filter-season" ng-model="check">
+      <option value="">Select Season</option>
+      <option value="1st">2015/16</option>
+      <option value="2nd">2016/17</option>
+    </select>
+  </div>
+  <div class="col-xs-6 col-sm-3 col-md-3" id="seasonSelect">
+    <label for="filter-team" style="color:white;">Single MatchDay Details </label>
+    <select  id="matchNames"class="form-control" id="filter-season" ng-model="selected">
+      <option value="">Select match</option>
+      <option ng-repeat="items in mainCtrl.rounds1 track by $index" value="{{$index}}" id="{{$index}}">{{$index}} {{items.name}}</option>
+    </select>
+  </div>
+
+
+
+  <div class="actions1">
+    <div ng-init="matchId1=$index; name = items.name" ng-show="check =='1st'">
+      <h1>{{mainCtrl.rounds1[selected].name}}</h1>
+      {{matchIndex}}
+      <table  id="play">
+        <thead>
+          <tr>
+            <th bgcolor="#ffffff">Team1</th>
+            <th >Team2</th>
+            <th >Date</th>
+            <th >Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="match in mainCtrl.rounds1[selected].matches">
+            <td>{{match.team1.name}}</td>
+            <td>{{match.team2.name}}</td>
+            <td>{{match.date}}</td>
+            <td>{{match.score1}}-{{match.score2}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="actions1" >
+    <div ng-init="matchId1=$index" ng-show="check =='2nd'" >
+      <h3>{{mainCtrl.rounds2[selected].name}}</h1>
+      <table  id="play">
+        <thead>
+          <tr>
+            <th>Team1</th>
+            <th>Team2</th>
+            <th>Date</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="match in mainCtrl.rounds2[selected].matches">
+            <td>{{match.team1.name}}</td>
+            <td>{{match.team2.name}}</td>
+            <td>{{match.date}}</td>
+            <td>{{match.score1}}-{{match.score2}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
