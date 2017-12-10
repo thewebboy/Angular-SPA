@@ -1,2 +1,2 @@
-# assignment4
+# Anguar SPA
 Create a single page application using AngularJS
